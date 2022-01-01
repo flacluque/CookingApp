@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import {StyleSheet, useColorScheme} from 'react-native';
-import {Navigation} from "./navigation/Navigation";
+import {useColorScheme} from 'react-native';
+import {Navigation} from './navigation/Navigation';
 import {SafeAreaProvider} from 'react-native-safe-area-context/src/SafeAreaContext';
 
 export default function App() {

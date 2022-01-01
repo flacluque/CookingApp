@@ -1,4 +1,5 @@
-import { View as DefaultView, Text as DefaultText, useColorScheme } from "react-native";
+import {Text as DefaultText, useColorScheme, View as DefaultView} from 'react-native';
+import Colors from '../constant/Colors';
 
 export function useThemeColor(props, colorName){
   const theme = useColorScheme();
@@ -11,12 +12,11 @@ export function useThemeColor(props, colorName){
   }
 }
 
-
 export function View(props){
   const { style, lightColor, darkColor, ...otherProps} = props;
   const background = useThemeColor({light: lightColor, dark: darkColor}, 'background')
 
-  return <DefaultView style={[{background}, style]} {...otherProps} />
+  return <DefaultView style={[{backgroundColor: background}, style]} {...otherProps} />
 }
 
 export function Text(props){
@@ -25,23 +25,3 @@ export function Text(props){
 
   return <DefaultText style={[{color}, style]} {...otherProps}/>
 }
-
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
-
-const Colors = {
-  light: {
-    text: '#000',
-    background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#fff',
-    background: '#000',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
-  },
-};
