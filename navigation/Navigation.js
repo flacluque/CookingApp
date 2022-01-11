@@ -14,15 +14,6 @@ export function Navigation({ colorScheme }) {
     >
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{
-            title: "Login",
-            // When logging out, a pop animation feels intuitive
-            //animationTypeForReplace: state.isSignout ? 'pop' : 'push',
-          }}
-        />
-        <Stack.Screen
           name={"Home"}
           component={Home}
           options={{ headerShown: false }}
@@ -31,6 +22,15 @@ export function Navigation({ colorScheme }) {
           name={"Recipe"}
           component={RecipePage}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            title: "Login",
+            // When logging out, a pop animation feels intuitive
+            //animationTypeForReplace: state.isSignout ? 'pop' : 'push',
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
