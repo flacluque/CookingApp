@@ -1,4 +1,10 @@
 export const LoginData = [
-  ["flavien", "mdpflavien"],
-  ["faissoil", "mdpfaissoil"],
+  {
+      username: "flavien",
+      password: "mdpflavien"
+  },
+  {
+      username: "faissoil",
+      password: "mdpfaissoil"
+  }
 ];
