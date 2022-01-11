@@ -41,16 +41,14 @@ export function Login({ navigation }) {
           </View>
         </TouchableHighlight>
       </View>
+      
     </View>
+    
   );
 }
 
 function isInData(login, password) {
-  const mapOfData = new Map(LoginData);
-  if (mapOfData.has(login) && mapOfData.get(login) == password) {
-    return true;
-  }
-  return false;
+  return !!LoginData.filter(el => el.username === login && el.password === password).length;
 }
 
 const styles = StyleSheet.create({
