@@ -22,7 +22,7 @@ export function Home({navigation}) {
 }
 
 function Card({headerName, description, imgSrc}) {
-  return (
+  return ( 
     <View style={[{width: '86%', marginLeft: 'auto', marginRight: 'auto'}, styles.mbSmall]}>
       <Pressable style={{flexDirection: 'column'}}
                  onPress={() => {
