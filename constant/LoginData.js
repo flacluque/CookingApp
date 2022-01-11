@@ -1,9 +1,4 @@
 export const LoginData = [
-    [
-        "flavien", "mdpflavien"
-    ],
-    [
-        "faissoil", "mdpfaissoil"
-    ]
-
-]
+  ["flavien", "mdpflavien"],
+  ["faissoil", "mdpfaissoil"],
+];
