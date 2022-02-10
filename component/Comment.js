@@ -1,5 +1,5 @@
 import {Text, View} from "../utils/Theme";
-import {ScrollView, StyleSheet} from "react-native";
+import {ScrollView, StyleSheet, TouchableOpacity} from "react-native";
 
 const styles = StyleSheet.create({
   header: {
@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
   }
 })
 
-export function Comment (){
+export function Comment ({navigation}){
+
   return(
    <ScrollView>
      <View style={[styles.flexC, styles.stretch,]}>
@@ -87,29 +88,16 @@ export function Comment (){
          </View>
        </View>
 
-       {/*Text Comment*/}
-       <View>
-         <View style={[{marginBottom: 16}]}>
-           <View style={[ styles.ml, styles.mr]}>
-             <View style={[styles.flexR, {alignItems: 'center', marginBottom: 16}]}>
-               <View style={[styles.picture, styles.mr]}>
-               </View>
-               <Text style={styles.defaultText}>User1</Text>
-               <Text style={[styles.defaultText, {marginLeft: "auto"}]}>8m ago</Text>
-             </View>
-             <View style={{marginLeft: 16, marginRight: 18}}>
-               <Text>
-                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequuntur enim itaque nisi tempora! Illo
-                 laboriosam, voluptatibus. Doloribus ducimus error expedita laborum mollitia nisi nulla, officiis reiciendis
-                 ut voluptas. Provident.
-               </Text>
-             </View>
-           </View>
-           <View style={styles.dividerLine}>
-           </View>
+     </View>
+     <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
+       <View style={{alignItems: 'center'}}>
+         <View style={{backgroundColor: '#5DB075', paddingHorizontal: 32, paddingVertical: 16,}}>
+           <Text style={{fontSize: 18}}>
+             Ajouter une photo
+           </Text>
          </View>
        </View>
-     </View>
+     </TouchableOpacity>
    </ScrollView>
   )
 }

@@ -5,6 +5,7 @@ import {Login} from "../component/Login";
 import {DarkTheme} from "../constant/Colors";
 import {RecipePage} from "../component/RecipePage";
 import {Comment} from "../component/Comment";
+import {CameraComponent} from "../component/Camera";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,11 @@ export function Navigation({colorScheme}) {
         <Stack.Screen
           name={"Recipe"}
           component={RecipePage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={"Camera"}
+          component={CameraComponent}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
