@@ -1,5 +1,6 @@
 import { Text, View } from "../utils/Theme";
 import { Image, ScrollView, TouchableOpacity } from "react-native";
+import {Recettes} from "../constant/Recettes";
 
 function TitleAndDescription({ title, description }) {
   return (
@@ -115,7 +116,7 @@ export function RecipePage({ navigation, route }) {
         <Image
           style={[{ height: 300, resizeMode: "cover" }]}
           source={{
-            uri: "https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8.jpg",
+            uri: recipe.imgSrc,
           }}
         />
         <TitleAndDescription
