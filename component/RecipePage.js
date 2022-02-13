@@ -1,5 +1,6 @@
 import { Text, View } from "../utils/Theme";
-import { Image, ScrollView } from "react-native";
+import { Image, ScrollView, TouchableOpacity } from "react-native";
+import {Recettes} from "../constant/Recettes";
 
 function TitleAndDescription({ title, description }) {
   return (
@@ -84,24 +85,50 @@ function HorizontalLine() {
   );
 }
 
-export function RecipePage({ route }) {
+function AddCommentButton({ navigation, recipeId }) {
+  return (
+    <TouchableOpacity
+      style={{ marginTop: 30 }}
+      onPress={() =>
+        navigation.navigate({ name: "Comment", params: { recipeId: 0 } })
+      }
+    >
+      <View style={{ alignItems: "center" }}>
+        <View
+          style={{
+            backgroundColor: "#5DB075",
+            paddingHorizontal: 32,
+            paddingVertical: 16,
+          }}
+        >
+          <Text style={{ fontSize: 18 }}>Ajouter une photo</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+export function RecipePage({ navigation, route }) {
   const { recipe } = route.params;
   return (
     <ScrollView>
-      <Image
-        style={[{ height: 300, resizeMode: "cover" }]}
-        source={{
-          uri: recipe.imgSrc,
-        }}
-      />
-      <TitleAndDescription
-        title={recipe.name}
-        description={recipe.largeDescription}
-      />
-      <HorizontalLine />
-      <Ingredient ingredients={recipe.ingredients} />
-      <HorizontalLine />
-      <Preparation steps={recipe.steps} />
+      <View style={{ paddingBottom: 40 }}>
+        <Image
+          style={[{ height: 300, resizeMode: "cover" }]}
+          source={{
+            uri: recipe.imgSrc,
+          }}
+        />
+        <TitleAndDescription
+          title={recipe.name}
+          description={recipe.largeDescription}
+        />
+        <HorizontalLine />
+        <Ingredient ingredients={recipe.ingredients} />
+        <HorizontalLine />
+        <Preparation steps={recipe.steps} />
+        <AddCommentButton navigation={navigation} recipeId={recipe.id} />
+      </View>
     </ScrollView>
   );
 }

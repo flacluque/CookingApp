@@ -6,6 +6,8 @@ export default {
   light: {
     text: "#000",
     background: "#fff",
+    borderColor: "#E8E8E8",
+    inputBackground: "#F6F6F6",
     tint: tintColorLight,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorLight,
@@ -13,6 +15,8 @@ export default {
   dark: {
     text: "#fff",
     background: darkBackground,
+    borderColor: "#555555",
+    inputBackground: "#202020",
     tint: tintColorDark,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,

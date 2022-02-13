@@ -720,13 +720,13 @@ export const Recettes = [
             "https://media.istockphoto.com/photos/fresh-dill-on-a-white-background-picture-id913358772",
         },
         {
-          key: 4,
+          key: 5,
           ingredient: "5g beurre",
           imgSrc:
             "https://media.istockphoto.com/photos/fresh-dill-on-a-white-background-picture-id913358772",
         },
         {
-          key: 4,
+          key: 6,
           ingredient: "2 poignée de salade",
           imgSrc:
             "https://media.istockphoto.com/photos/fresh-dill-on-a-white-background-picture-id913358772",

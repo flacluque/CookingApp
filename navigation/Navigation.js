@@ -4,6 +4,8 @@ import { Home } from "../component/Home";
 import { Login } from "../component/Login";
 import { DarkTheme } from "../constant/Colors";
 import { RecipePage } from "../component/RecipePage";
+import { Comment } from "../component/Comment";
+import { CameraComponent } from "../component/Camera";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +33,18 @@ export function Navigation({ colorScheme }) {
           name={"Recipe"}
           component={RecipePage}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={"Camera"}
+          component={CameraComponent}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={"Comment"}
+          component={Comment}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
